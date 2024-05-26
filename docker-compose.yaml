@@ -13,6 +13,15 @@ services:
     ports:
       - '3000:3000'
 
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - '8080:80'
+    networks:
+      - node-network
+
   db:
     platform: linux/x86_64
     image: mysql:5.7
