@@ -4,6 +4,13 @@ const port = 3000;
 const mysql = require('mysql');
 const { uniqueNamesGenerator, names } = require('unique-names-generator');
 
+// Próximos passos:
+// 1) abstrair conexão com o banco de dados para um módulo separado (ver no tabnews)
+// 2) abstrair geração de nomes aleatórios para um módulo separado (UTILS)
+// 3) utilizar o .env
+// 4) otimizar a imagem com multi stage build
+// 5) fazer rodar tudo automaticamente somente com o docker-compose up -d
+
 const config = {
   host: 'db',
   user: 'root',
