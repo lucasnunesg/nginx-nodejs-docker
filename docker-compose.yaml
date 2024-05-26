@@ -12,6 +12,8 @@ services:
     tty: true
     ports:
       - '3000:3000'
+    depends_on:
+      - db
 
   nginx:
     restart: always
@@ -21,6 +23,9 @@ services:
       - '8080:80'
     networks:
       - node-network
+    depends_on:
+      - app
+      - db
 
   db:
     platform: linux/x86_64
